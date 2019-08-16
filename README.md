@@ -13,4 +13,5 @@ Necessário instalar o nodejs
 Configurar o arquivo: frontend/src/util/config.js com a url da API
 
 Executar o comando: "npm install"  sem aspas, no diretório /frontend
+
 Executar o comando: "npm run serve"  sem aspas, no diretório /frontend
