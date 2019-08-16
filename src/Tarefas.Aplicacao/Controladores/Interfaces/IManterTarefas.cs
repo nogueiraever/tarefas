@@ -9,7 +9,7 @@ namespace Tarefas.Aplicacao
 
         void Concluir(long id);
 
-        void Criar(TarefaDto tarefaDto);
+        TarefaDto Criar(TarefaDto tarefaDto);
 
         IList<ListarTarefaDto> Listar();
 

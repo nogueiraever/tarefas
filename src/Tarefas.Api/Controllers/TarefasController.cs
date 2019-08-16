@@ -35,8 +35,8 @@ namespace Tarefas.Api.Controllers
             }
         }
 
-        [HttpPut("concluir")]
-        public ActionResult Concluir([FromQuery]long id)
+        [HttpPut("concluir/{id}")]
+        public ActionResult Concluir(long id)
         {
             try
             {
@@ -58,8 +58,7 @@ namespace Tarefas.Api.Controllers
         {
             try
             {
-                manterTarefas.Criar(tarefaDto);
-                return Ok();
+                return Ok(manterTarefas.Criar(tarefaDto));
             }
             catch (NegocioException negocioException)
             {
@@ -88,8 +87,8 @@ namespace Tarefas.Api.Controllers
             }
         }
 
-        [HttpPut("reativar")]
-        public ActionResult Reativar([FromQuery]long id)
+        [HttpPut("reativar/{id}")]
+        public ActionResult Reativar(long id)
         {
             try
             {
@@ -106,8 +105,8 @@ namespace Tarefas.Api.Controllers
             }
         }
 
-        [HttpDelete]
-        public ActionResult Remover([FromQuery]long id)
+        [HttpDelete("{id}")]
+        public ActionResult Remover(long id)
         {
             try
             {

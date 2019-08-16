@@ -43,11 +43,12 @@ namespace Tarefas.Aplicacao.Controladores
             unitOfWork.SaveChanges();
         }
 
-        public void Criar(TarefaDto tarefaDto)
+        public TarefaDto Criar(TarefaDto tarefaDto)
         {
             var tarefa = MapearParaDominio(tarefaDto, new Tarefa());
             repositorioTarefa.Inserir(tarefa);
             unitOfWork.SaveChanges();
+            return MapearParaDto(tarefa);
         }
 
         public IList<ListarTarefaDto> Listar()
@@ -85,7 +86,8 @@ namespace Tarefas.Aplicacao.Controladores
             {
                 Id = tarefa.Id,
                 Titulo = tarefa.Titulo,
-                Status = tarefa.Status
+                Status = tarefa.Status,
+                Descricao = tarefa.Descricao
             };
         }
 
