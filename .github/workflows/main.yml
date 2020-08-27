@@ -24,6 +24,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Get Commit Difference Count Between Two Branches
+        id: cdc
         uses: jessicalostinspace/commit-difference-action@v1.0.0
         with:
          base-branch: 'development' 
